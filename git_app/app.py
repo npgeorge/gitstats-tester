@@ -7,7 +7,6 @@ from flask_migrate import Migrate
 from git_app.models import db, migrate, User, Repos
 # import my_routes from routes.py
 from git_app.routes import my_routes
-#from web_app.api_twitter_service import twitter_api_client
 
 load_dotenv()
 
@@ -33,6 +32,6 @@ def create_app():
 
     return app
 
-if __name__ =="__main__":
-    app = create_app()
-    app.run_server(debug=True)
+#if __name__ =="__main__":
+#    app = create_app()
+#    app.run_server(debug=True)

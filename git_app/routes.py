@@ -16,27 +16,27 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 # for flask
-#from .models import db, migrate, User, Repos
-#from .services import github_api_client
+from .models import db, migrate, User, Repos
+from .services import github_api_client
 
 # for heroku
-from models import db, migrate, User, Repos
-from services import github_api_client
+#from models import db, migrate, User, Repos
+#from services import github_api_client
 
 
 load_dotenv()
 
 ############ TAKEN FROM APP.PY #################
-app = Flask(__name__)
-
-DATABASE_URL = "git_app/git_test.db"
-
-app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-# importing models.py database class tables
-# links to __init__file which calls on create app to run
-db.init_app(app)
-migrate.init_app(app, db)
+#app = Flask(__name__)
+#
+#DATABASE_URL = "git_app/git_test.db"
+#
+#app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+#app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+## importing models.py database class tables
+## links to __init__file which calls on create app to run
+#db.init_app(app)
+#migrate.init_app(app, db)
 
 # linking to routes.py page via my_routes variable
 # app.register_blueprint(my_routes)
@@ -54,7 +54,7 @@ client = github_api_client()
 my_routes = Blueprint('my_routes', __name__)
 
 # linking to routes.py page via my_routes variable
-app.register_blueprint(my_routes)
+#app.register_blueprint(my_routes)
 
 @my_routes.route("/")
 def index():
@@ -124,7 +124,7 @@ def web_index():
     return render_template("web.html")
 
 # J's endpoint
-@my_routes.route('/web/kubernetes_test', methods=['GET'])
+@my_routes.route('/web/kubernetes_test', methods=['GET', 'POST'])
 def display_graph():
     # api-endpoint 
     URL = "https://api.github.com/repos/kubernetes/kubernetes/issues?page=1"
@@ -147,6 +147,6 @@ def display_graph():
     fig.show()
 
 
-if __name__ =="__main__":
-    app.debug = True
-    app.run_server(debug=True)
+#if __name__ =="__main__":
+#    app.debug = True
+#    app.run_server(debug=True)

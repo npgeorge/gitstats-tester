@@ -14,12 +14,12 @@ import plotly.express as px
 from flask import Blueprint, jsonify, request, render_template, current_app
 
 # for flask
-from .models import db, migrate, User, Repos
-from .services import github_api_client
+#from .models import db, migrate, User, Repos
+#from .services import github_api_client
 
 # for heroku
-#from models import db, migrate, User, Repos
-#from services import github_api_client
+from models import db, migrate, User, Repos
+from services import github_api_client
 
 load_dotenv()
 

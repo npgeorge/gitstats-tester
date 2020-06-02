@@ -5,12 +5,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 # for flask
-from .routes import my_routes
-from .models import db, migrate, User, Repos
+#from .routes import my_routes
+#from .models import db, migrate, User, Repos
 
 #for heroku
-#from routes import my_routes
-#from models import db, migrate, User, Repos
+from routes import my_routes
+from models import db, migrate, User, Repos
 
 load_dotenv()
 

@@ -15,21 +15,19 @@ load_dotenv()
 # database url as an environment variable
 DATABASE_URL = os.getenv("DATABASE_URL", default="OOPS")
 
-def create_app():
 
-    app = Flask(__name__)
-    app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-    # importing models.py database class tables
-    # links to __init__file which calls on create app to run
-    db.init_app(app)
-    migrate.init_app(app, db)
-    
-    # linking to routes.py page via my_routes variable
-    app.register_blueprint(my_routes)
+app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+# importing models.py database class tables
+# links to __init__file which calls on create app to run
+db.init_app(app)
+migrate.init_app(app, db)
 
-    if __name__ =="__main__":
-        app.run_server(debug=True)
+# linking to routes.py page via my_routes variable
+app.register_blueprint(my_routes)
+if __name__ =="__main__":
+    app.run_server(debug=True)
 
-    return app
+

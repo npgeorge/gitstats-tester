@@ -29,10 +29,15 @@ client = github_api_client()
 # specifying for Blueprint to be used in app.py
 my_routes = Blueprint("git_app", __name__)
 
+@my_routes.route("/")
+def index():
+    # return "Example"
+    return render_template("homepage.html")
+
 @my_routes.route("/ds")
 def ds_index():
     # return "Example"
-    return render_template("homepage.html")
+    return render_template("ds.html")
 
 
 # gathering all the repos and displaying what is stored in the Repos database

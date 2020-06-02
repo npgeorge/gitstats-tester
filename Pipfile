@@ -15,6 +15,7 @@ pygithub = "*"
 numpy = "*"
 pandas = "*"
 plotly = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"

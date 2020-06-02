@@ -12,6 +12,8 @@ from pprint import pformat
 import plotly.express as px
 # current app ppints to config in app.py
 from flask import Blueprint, jsonify, request, render_template, current_app
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 # for flask
 #from .models import db, migrate, User, Repos

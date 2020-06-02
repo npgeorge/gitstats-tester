@@ -13,13 +13,13 @@ from models import db, migrate, User, Repos
 load_dotenv()
 
 # database url as an environment variable
-DATABASE_URL = os.getenv("DATABASE_URL", default="OOPS")
+#DATABASE_URL = os.getenv("DATABASE_URL", default="OOPS")
 
 def create_app(self):
 
     app = Flask(__name__)
-    app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    #app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+    #app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     # importing models.py database class tables
     # links to __init__file which calls on create app to run

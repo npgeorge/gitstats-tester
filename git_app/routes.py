@@ -13,13 +13,13 @@ import plotly.express as px
 # current app ppints to config in app.py
 from flask import Blueprint, jsonify, request, render_template, current_app
 
-# import database models.py to link class tables
-#from git_app.models import db, migrate, User, Repos
-#from git_app.services import github_api_client
+# for flask
+from .models import db, migrate, User, Repos
+from .services import github_api_client
 
-#rearranging for Heroku
-from models import db, migrate, User, Repos
-from services import github_api_client
+# for heroku
+#from models import db, migrate, User, Repos
+#from services import github_api_client
 
 load_dotenv()
 

@@ -14,9 +14,11 @@ load_dotenv()
 # database url as an environment variable
 DATABASE_URL = os.getenv("DATABASE_URL", default="OOPS")
 
+app = Flask(__name__)
+
 def create_app():
 
-    app = Flask(__name__)
+    #app = Flask(__name__)
     app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
@@ -31,5 +33,4 @@ def create_app():
     return app
 
 if __name__ =="__main__":
-    app = create_app()
     app.run_server(debug=True)

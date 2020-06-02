@@ -7,8 +7,8 @@ from flask_migrate import Migrate
 # import database models.py to link class tables
 # import my_routes from routes.py
 #rearranging for heroku
-from .routes import my_routes
-from .models import db, migrate, User, Repos
+from git_app.routes import my_routes
+from git_app.models import db, migrate, User, Repos
 
 load_dotenv()
 

@@ -15,9 +15,6 @@ load_dotenv()
 # database url as an environment variable
 DATABASE_URL = os.getenv("DATABASE_URL", default="OOPS")
 
-#tried this for heroku deploy, didn't work
-#app = Flask(__name__)
-
 def create_app():
 
     app = Flask(__name__)
@@ -33,8 +30,3 @@ def create_app():
     app.register_blueprint(my_routes)
 
     return app
-
-#app = create_app()
-#
-#if __name__ =="__main__":
-#    app.run_server(debug=True)

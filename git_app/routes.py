@@ -31,7 +31,7 @@ client = github_api_client()
 #
 
 # specifying for Blueprint to be used in app.py
-my_routes = Blueprint("git_app", __name__)
+my_routes = Blueprint('my_routes', __name__)
 
 @my_routes.route("/")
 def index():

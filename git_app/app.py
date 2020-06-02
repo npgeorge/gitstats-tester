@@ -29,4 +29,7 @@ def create_app():
     # linking to routes.py page via my_routes variable
     app.register_blueprint(my_routes)
 
+    if __name__ =="__main__":
+        app.run_server(debug=True)
+
     return app

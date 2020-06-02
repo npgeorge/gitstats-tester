@@ -16,12 +16,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 # for flask
-from .models import db, migrate, User, Repos
-from .services import github_api_client
+#from .models import db, migrate, User, Repos
+#from .services import github_api_client
 
 # for heroku
-#from models import db, migrate, User, Repos
-#from services import github_api_client
+from models import db, migrate, User, Repos
+from services import github_api_client
 
 
 load_dotenv()

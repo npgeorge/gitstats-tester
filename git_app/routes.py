@@ -21,7 +21,25 @@ from flask import Blueprint, jsonify, request, render_template, current_app
 from models import db, migrate, User, Repos
 from services import github_api_client
 
+
 load_dotenv()
+
+############ TAKEN FROM APP.PY #################
+app = Flask(__name__)
+
+DATABASE_URL = "git_app/git_test.db"
+
+app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+# importing models.py database class tables
+# links to __init__file which calls on create app to run
+db.init_app(app)
+migrate.init_app(app, db)
+
+# linking to routes.py page via my_routes variable
+# app.register_blueprint(my_routes)
+
+############ TAKEN FROM APP.PY #################
 
 # can make client global variable if you want to
 client = github_api_client()
@@ -32,6 +50,9 @@ client = github_api_client()
 
 # specifying for Blueprint to be used in app.py
 my_routes = Blueprint('my_routes', __name__)
+
+# linking to routes.py page via my_routes variable
+app.register_blueprint(my_routes)
 
 @my_routes.route("/")
 def index():
@@ -122,3 +143,8 @@ def display_graph():
     issues = issues.append(issues3)
     fig = px.line(issues, x='created_at', y='comments')
     fig.show()
+
+
+if __name__ =="__main__":
+    app.debug = True
+    app.run_server(debug=True)

@@ -32,8 +32,4 @@ def create_app(self):
     # linking to routes.py page via my_routes variable
     app.register_blueprint(my_routes)
 
-    # if we run the init file, it should run our app after importing it
-    if __name__ =="__main__":
-        app.run_server(debug=True)
-
     return app

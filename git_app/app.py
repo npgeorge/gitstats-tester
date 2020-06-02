@@ -23,8 +23,8 @@ def create_app(self):
 
     # importing models.py database class tables
     # links to __init__file which calls on create app to run
-    db.init_app(app)
-    migrate.init_app(app, db)
+    #db.init_app(app)
+    #migrate.init_app(app, db)
     
     # linking to routes.py page via my_routes variable
     app.register_blueprint(my_routes)

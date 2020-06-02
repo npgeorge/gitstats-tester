@@ -18,8 +18,8 @@ from flask import Blueprint, jsonify, request, render_template, current_app
 #from git_app.services import github_api_client
 
 #rearranging for Heroku
-from models import db, migrate, User, Repos
-from services import github_api_client
+from .models import db, migrate, User, Repos
+from .services import github_api_client
 
 load_dotenv()
 

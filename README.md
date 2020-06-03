@@ -1,10 +1,11 @@
 #
 #
 #
-
-soon to be helpful information
-
 Github Repository Example response:
+#
+#
+#
+
 (flask) bash-3.2$ curl -i https://api.github.com/repos/kubernetes/kubernetes
 HTTP/1.1 200 OK
 server: GitHub.com

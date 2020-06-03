@@ -28,8 +28,15 @@
     <h4>Get JSON response of any Github repository:</h4>
 
     <form action="/repos/commits" method="POST">
-        <label>Get commit response in JSON:</label>
-        <input type="text" name="repo_commits" placeholder="..." value="username/repository">
+        <label>Get <i>commits</i> response in JSON:</label>
+        <input type="text" name="repo_commits" placeholder="username/repository">
+    
+        <button>Submit</button>
+    </form>
+    <br/>
+    <form action="/repos/comments" method="POST">
+        <label>Get <i>comments</i> response in JSON:</label>
+        <input type="text" name="repo_comments" placeholder="username/repository">
     
         <button>Submit</button>
     </form>

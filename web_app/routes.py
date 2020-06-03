@@ -77,12 +77,21 @@ def add_repos():
         return jsonify({"message": "OOPS PLEASE SPECIFY A REPOSITORY!"})
 
 # ------- repo commit response --------
-@my_routes.route('/repos/commits', methods=['POST', 'GET'])
+@my_routes.route('/repos/commits', methods=['GET', 'POST'])
 def commits():
-    
     # user inputs repo name
     ui_commit = request.form['repo_commits']
     URL = f"https://api.github.com/repos/{ui_commit}/commits?per_page=100"
+    response = requests.get(URL)
+    data = response.json()
+    data = pformat(data)
+    return data
+
+@my_routes.route('/repos/comments', methods=['GET', 'POST'])
+def comments():
+    # user inputs repo name
+    ui_comments = request.form['repo_comments']
+    URL = f"https://api.github.com/repos/{ui_comments}/comments?per_page=100"
     response = requests.get(URL)
     data = response.json()
     data = pformat(data)

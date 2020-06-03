@@ -15,33 +15,11 @@ from flask import Blueprint, jsonify, request, render_template, current_app
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-# for flask
-#from .models import db, migrate, User, Repos
-#from .services import github_api_client
-
-# for heroku
-from models import db, migrate, User, Repos
-from services import github_api_client
+from web_app.models import db, migrate, User, Repos
+from web_app.services import github_api_client
 
 
 load_dotenv()
-
-############ TAKEN FROM APP.PY #################
-#app = Flask(__name__)
-#
-#DATABASE_URL = "git_app/git_test.db"
-#
-#app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
-#app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-## importing models.py database class tables
-## links to __init__file which calls on create app to run
-#db.init_app(app)
-#migrate.init_app(app, db)
-
-# linking to routes.py page via my_routes variable
-# app.register_blueprint(my_routes)
-
-############ TAKEN FROM APP.PY #################
 
 # can make client global variable if you want to
 client = github_api_client()

@@ -1,10 +1,8 @@
-# Flask App
-#
-#
-## Github Repository Example response:
-#
-#
-#
+# [Gitstats Tester App Link](https://gitstats-tester.herokuapp.com/)
+
+The DS team wanted to make it easy for the web team to access endpoints, so we created this flask app to do just that. Click on the link above to check it out!
+
+### Github Repository Example response:
 
 (flask) bash-3.2$ curl -i https://api.github.com/repos/kubernetes/kubernetes
 HTTP/1.1 200 OK

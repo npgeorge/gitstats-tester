@@ -154,9 +154,7 @@ X-GitHub-Request-Id: C898:5597:17095:3B796:5ECEB00B
   "subscribers_count": 3195
 }
 
-
-------- PyGithub ----------
-# PyGithub list of attributes
+# PyGithub list of Attributes
 ['CHECK_AFTER_INIT_FLAG', 
 '_CompletableGithubObject__complete', 
 '_CompletableGithubObject__completed', 
